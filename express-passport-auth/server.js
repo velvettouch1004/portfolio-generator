@@ -5,7 +5,7 @@ const passport = require("passport");
 const cors = require("cors");
 
 const authRouter = require("./routes/authRouter");
-const proRouter = require("./routes/authRouter")
+const proRouter = require("./routes/proRouter")
 
 const app = express();
 
