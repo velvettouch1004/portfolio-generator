@@ -5,6 +5,7 @@ const passport = require("passport");
 const cors = require("cors");
 
 const authRouter = require("./routes/authRouter");
+const proRouter = require("./routes/authRouter")
 
 const app = express();
 
@@ -41,6 +42,7 @@ require("./config/passport.config")(passport);
 
 // Routes
 app.use(authRouter);
+app.use(proRouter);
 
 const port = process.env.PORT || 5000;
 
