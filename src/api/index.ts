@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: "http://localhost:5000" });
 API.interceptors.request.use((req) => {
-    if (localStorage.getItem('profile')) {
-        const profile = localStorage.getItem('profile') || '';
-        //req.headers.Authorization = `Bearer ${JSON.parse(profile).token}`;
-    }
+  if (localStorage.getItem("profile")) {
+    const profile = localStorage.getItem("profile") || "";
+    //req.headers.Authorization = `Bearer ${JSON.parse(profile).token}`;
+  }
 
-    return req;
+  return req;
 });
 // API.interceptors.response.use(response => {
 //     return response;
@@ -19,7 +19,7 @@ API.interceptors.request.use((req) => {
 //        alert("Server error");
 //    }
 //    return error;
-   
+
 //  });
-export const signIn = (formData: any) => API.post('/user/signin', formData);
-export const signUp = (formData: any) => API.post('/user/signup', formData);
+export const signIn = (formData: any) => API.post("/login", formData);
+export const signUp = (formData: any) => API.post("/register", formData);
